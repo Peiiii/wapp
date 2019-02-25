@@ -1,0 +1,46 @@
+<style>{%include "file_explorer.css"%}</style>
+<div id="file_explorer_1" class="running-app-box" ref="app">
+    <div class="light-padding-box">
+        <div class="hidden filename-box"><%path.path%></div>
+        <button class="btn btn-default btn-sm" style="padding:3px 10px;"><%path.path%></button>
+    </div>
+    <div class="divider"></div>
+    <div class="place-hold-box menubar box-30 bg-gray">
+        <button class="btn btn-default btn-sm btn-back" style="float:left;" @click="pathBackward"><span
+                class="glyphicon glyphicon-menu-left"></span></button>
+        <button class="btn btn-default btn-sm btn-submit" style="float:left;" @click="toPathTop"><span
+                class="glyphicon glyphicon-home"></span></button>
+        <button class="btn btn-default btn-sm btn-back" style="float:right;" @click="pathBackward"><span
+                class="glyphicon glyphicon-folder-close"></span></button>
+        <button class="btn btn-default btn-sm btn-submit" style="float:right;" @click="toPathTop"><span
+                class="gicon gicon-file"><img src="/imgs/file.png" class="btn-icon"></span>
+        </button>
+    </div>
+    <div class="app-backdrop">
+        <div class="app-content-area centor-block drop-white">
+            <div class="message-box alert alert-info" style=" display:none;"></div>
+            <div rows="10" class="centor-block  app-content">
+                <header><%path.name%></header>
+                <div class="divider"></div>
+                <div v-for="d in path.dirChildren">
+                    <span class="glyphicon glyphicon-folder-close"></span>
+                    <span class="text-info dir-link" :path="d.epath" @click="pathForward"><%d.name%></span>
+                    <span class="text-info" style="float:right;"><small><%d.ctime%> </small></span>
+                    <span class="text-info" style="float:right;"><small><%d.size%> Bytes&nbsp;&nbsp;</small></span>
+                    <span class="text-info" style="float:right;"><small><%d.type%>&nbsp;&nbsp;</small></span>
+                    <div class="divider"></div>
+                </div>
+                <div v-for="f in path.fileChildren">
+                    <span class="gicon gicon-file"><img src="/imgs/file.png" class="btn-icon"></span>
+                    <span class="text-info file-link" :path="f.path" onclick="eventOpenFileWithApp('notepad',event)"><%f.name%></span>
+                    <span class="text-info" style="float:right;"><small><%f.ctime%></small></span>
+                    <span class="text-info" style="float:right;"><small><%f.size%> Bytes&nbsp;&nbsp;</small></span>
+                    <span class="text-info" style="float:right;"><small><%f.type%>&nbsp;&nbsp;</small></span>
+                    <div class="divider"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>{%include "file_explorer.js"%}</script>

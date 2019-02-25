@@ -1,0 +1,37 @@
+<style>{%include "notepad.css"%}</style>
+<div id="notepad" class="running-app-box">
+    <div class="light-padding-box">
+        <div class="hidden filename-box"><%file.epath%></div>
+        <label class=""><%file.name%></label>
+        <button class="btn btn-default btn-sm btn-submit" style="float:right;">提交</button>
+        <div class="switch-speak" style="float:right;" >
+            <button class="btn btn-default btn-sm switch-on">阅读全文</button>
+            <button class="btn btn-default btn-sm switch-off">停止阅读</button>
+        </div>
+        <div class="switch-viewMarkdown" style="float:right;" >
+            <button class="btn btn-default btn-sm switch-on">Preview Markdown</button>
+            <button class="btn btn-default btn-sm switch-off">Exit Preview</button>
+        </div>
+        <div class="switch-viewHTML" style="float:right;" >
+            <button class="btn btn-default btn-sm switch-on">Preview HTML</button>
+            <button class="btn btn-default btn-sm switch-off">Exit Preview</button>
+        </div>
+        <div class="message-box alert alert-info" style="display:none;margin-top:5px;"></div>
+
+    </div>
+    <div class="divider"></div>
+    <div class="place-hold-box menubar box bg-gray">
+
+    </div>
+    <div class="app-backdrop">
+    <div class=" centor-block app-content-area drop-white notepad-content-area" style="text-align:center;">
+
+        <textarea rows="10" class="centor-block app-content notepad-textarea notepad-text-input speakinnertext"  id="input_textarea_1"><%file.content%></textarea>
+        <div class=" app-content centor-block view-html hidden"
+             style="display:inline-block;position:absolute;left:50%;background:white;line-height:2em;overflow:auto;top:0px;right:0px;bottom:0px;" id="view_box_1"></div>
+    </div>
+    </div>
+</div>
+<script src="/js/highlight.js"></script>
+<script src="/js/marked.min.js"></script>
+<script>{%include "notepad.js"%}</script>

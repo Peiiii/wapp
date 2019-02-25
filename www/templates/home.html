@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    {%include "include.html"%}
+</head>
+<body class="home-body">
+<div class="window-list"></div>
+<div class="app-list">
+   {%for app in apps %}
+    <div class="grid">
+        <div class="app" id="{{app.id}}" onclick="openApp('{{app.name}}')"><img src="/imgs/app.ico">
+            {{app.nickName}}
+        </div>
+    </div>
+    {%endfor%}
+    {%for i in range(124)%}
+    <div class="grid" id="app_grid_{{i+3}}"></div>
+    {%endfor%}
+</div>
+</body>
+</html>

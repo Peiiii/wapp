@@ -1,0 +1,23 @@
+.notepad-content-area{
+    overflow:hidden;
+}
+.notepad-textarea{
+    width:100%;
+    border:none;
+    position:absolute;
+    top:0px;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    padding:20px;
+}
+.view-html{
+    padding:20px;
+    text-align:left;
+}
+.view-html h1{
+    text-align:center;
+}
+.view-html img{
+    max-width:100%;
+}
