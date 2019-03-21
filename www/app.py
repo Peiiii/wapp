@@ -165,20 +165,22 @@ def getTemplate(dic):
         return tem.render(dic)
 ##############################################
 #############################################
-
+ip='0.0.0.1'
+port=80
+addr=ip+':'+str(port)
 async def init(loop):
-    server = await loop.create_server(app.make_handler(), '127.0.0.1', 80)
-    logging.info('server started at http://127.0.0.1:80....')
+    server = await loop.create_server(app.make_handler(), ip, port)
+    logging.info('server started at http://%s:%s....'%(ip,port))
     return server
 
 print('current dir:',os.getcwd())
 app.router.add_static('/', 'static', show_index=True)
-print('http://127.0.0.1')
+print('http://%s'%(addr))
 loop.run_until_complete(init(loop))
 import webbrowser
 print('open in a minute:')
 #webbrowser.open('http://127.0.0.1:80/test.html')
-webbrowser.open('http://127.0.0.1:80/home/top')
+#webbrowser.open('http://127.0.0.1:80/home/top')
 loop.run_forever()
 
 
