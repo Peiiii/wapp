@@ -22,6 +22,9 @@ def makeDirs(*dirs):
     for d in dirs:
         if not os.path.exists(d):
             os.makedirs(d)
+
+
+# makeAppFiles('link','常用链接')
 def log(*args, num=20, str='*'):
     print(str * num, end='')
     print(*args, end='')

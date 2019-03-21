@@ -10,7 +10,8 @@ class Trash{
     constructor(){
         this.app={
             file_explorer:[],
-            notepad:[]
+            notepad:[],
+            link:[]
         };
         this.modules=[];
         this.window={};

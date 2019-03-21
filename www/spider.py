@@ -61,6 +61,9 @@ def test():
     plt.plot(days,highs,'b--')
     plt.plot(days,lows,'r--')
     plt.show()
-
+def test2():
+    url='http://207.148.94.195'
+    r=requests.get(url)
+    print(r.text)
 if __name__=='__main__':
     test()
