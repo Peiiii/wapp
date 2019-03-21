@@ -165,7 +165,7 @@ def getTemplate(dic):
         return tem.render(dic)
 ##############################################
 #############################################
-ip='0.0.0.1'
+ip='0.0.0.0'
 port=80
 addr=ip+':'+str(port)
 async def init(loop):
