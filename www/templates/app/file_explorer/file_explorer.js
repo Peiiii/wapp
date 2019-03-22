@@ -1,6 +1,6 @@
 cimport('file');
 function runFileExplorer(app){
-    default_path='e:/wapp/www';
+    default_path=config.default_path;
     dir=getDir(default_path);
     fe=new Vue({
         delimiters:['<%','%>'],

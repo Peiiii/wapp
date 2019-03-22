@@ -5,6 +5,9 @@ from framework import Application, templates_dir
 from jinja2 import Template, Environment, PackageLoader
 from tool import  initTools,log,Path,T,loadText
 from models import CloudAppLoader
+from  config import config
+
+
 env = Environment(loader=PackageLoader('templates',''))
 loop = asyncio.get_event_loop()
 app = Application(loop=loop)
@@ -165,9 +168,11 @@ def getTemplate(dic):
         return tem.render(dic)
 ##############################################
 #############################################
-ip='0.0.0.0'
-port=80
-addr=ip+':'+str(port)
+
+
+ip=config['ip']
+port=config['port']
+addr=config['addr']
 async def init(loop):
     server = await loop.create_server(app.make_handler(), ip, port)
     logging.info('server started at http://%s:%s....'%(ip,port))
