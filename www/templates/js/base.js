@@ -11,7 +11,8 @@ class Trash{
         this.app={
             file_explorer:[],
             notepad:[],
-            link:[]
+            link:[],
+            test:[]
         };
         this.modules=[];
         this.window={};

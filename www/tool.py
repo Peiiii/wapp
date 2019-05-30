@@ -24,7 +24,7 @@ def makeDirs(*dirs):
             os.makedirs(d)
 
 
-# makeAppFiles('link','常用链接')
+makeAppFiles('test','测试页面')
 def log(*args, num=20, str='*'):
     print(str * num, end='')
     print(*args, end='')

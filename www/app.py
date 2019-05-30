@@ -183,9 +183,12 @@ app.router.add_static('/', 'static', show_index=True)
 print('http://%s'%(addr))
 loop.run_until_complete(init(loop))
 import webbrowser
-print('open in a minute:')
+# print('open in a minute:')
 #webbrowser.open('http://127.0.0.1:80/test.html')
 #webbrowser.open('http://127.0.0.1:80/home/top')
+from config import quik_links
+for i in quik_links:
+    print(i)
 loop.run_forever()
 
 

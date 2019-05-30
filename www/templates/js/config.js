@@ -37,7 +37,7 @@ class Config{
             fullScreen:btn1.html(),
             exitFullScreen:btn2.html()
         }
-        this.default_path='e:/';
+        this.default_path='/';
     }
 }
 config=new Config();
